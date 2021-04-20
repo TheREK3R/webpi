@@ -1,8 +1,16 @@
 # webpi Cookbook
 
-[![Build status](https://ci.appveyor.com/api/projects/status/reuore13vgktbk6o/branch/master?svg=true)](https://ci.appveyor.com/project/ChefWindowsCookbooks/webpi/branch/master) [![Cookbook Version](https://img.shields.io/cookbook/v/webpi.svg)](https://supermarket.chef.io/cookbooks/webpi)
+[![Cookbook Version](https://img.shields.io/cookbook/v/webpi.svg)](https://supermarket.chef.io/cookbooks/webpi)
+[![CI State](https://github.com/sous-chefs/webpi/workflows/ci/badge.svg)](https://github.com/sous-chefs/webpi/actions?query=workflow%3Aci)
+[![OpenCollective](https://opencollective.com/sous-chefs/backers/badge.svg)](#backers)
+[![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Microsoft Web Platform Installer (WebPI) automates the installation of Microsoft's entire Web Platform. This cookbook makes it easy to get WebpiCmdLine.exe the lightweight CLI version of WebPI onto a Windows node. It also exposes a resource for installing WebPI products idempotently.
+
+## Maintainers
+
+This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of Chef cookbook maintainers working together to maintain important cookbooks. If you’d like to know more please visit sous-chefs.org or come chat with us on the Chef Community Slack in #sous-chefs.
 
 ## Requirements
 
@@ -74,7 +82,6 @@ webpi_product 'WindowsAzurePowerShellGet' do
 end
 ```
 
-
 ### webpi_application
 
 #### Actions
@@ -93,6 +100,7 @@ end
 - returns: specifies the return value(s) expected for a successful installation. Can be a single integer or array of integers. Default is [0, 42]
 
 #### Examples
+
 Installing WebMatrix while Accepting the EULA and also install app to IISExpress
 Ex: >WebPICMD.exe /Install /Products:WebMatrix /AcceptEula /IISExpress
 
@@ -105,7 +113,7 @@ end
 ```
 
 Installing an application to MicrosoftAzure ServiceFabric CoreSDK
-Ex: >WebPICMD.exe /Install /Applications:MicrosoftAzure-ServiceFabric-CoreSDK /AcceptEula 
+Ex: >WebPICMD.exe /Install /Applications:MicrosoftAzure-ServiceFabric-CoreSDK /AcceptEula
 
 ```ruby
 webpi_application 'MicrosoftAzure-ServiceFabric-CoreSDK' do
@@ -113,7 +121,6 @@ webpi_application 'MicrosoftAzure-ServiceFabric-CoreSDK' do
   action :install
 end
 ```
-
 
 ```ruby
 password = data_bag_item('secrets','mysqlpassword')['password'] # Should be a encrypted data bag
@@ -130,22 +137,27 @@ end
 
 Downloads and unzips `WebpiCmdLine.exe` to the location specified by `node['webpi']['home']`. `WebpiCmdLine.exe` is used required by the `webpi_product` LWRP for taking all actions.
 
-## License & Authors
+## Contributors
 
-**Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
+This project exists thanks to all the people who [contribute.](https://opencollective.com/sous-chefs/contributors.svg?width=890&button=false)
 
-**Copyright:** 2011-2019, Chef Software, Inc.
+### Backers
 
-```text
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Thank you to all our backers!
 
-    http://www.apache.org/licenses/LICENSE-2.0
+![https://opencollective.com/sous-chefs#backers](https://opencollective.com/sous-chefs/backers.svg?width=600&avatarHeight=40)
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
+### Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
+
+![https://opencollective.com/sous-chefs/sponsor/0/website](https://opencollective.com/sous-chefs/sponsor/0/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/1/website](https://opencollective.com/sous-chefs/sponsor/1/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/2/website](https://opencollective.com/sous-chefs/sponsor/2/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/3/website](https://opencollective.com/sous-chefs/sponsor/3/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/4/website](https://opencollective.com/sous-chefs/sponsor/4/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/5/website](https://opencollective.com/sous-chefs/sponsor/5/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/6/website](https://opencollective.com/sous-chefs/sponsor/6/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/7/website](https://opencollective.com/sous-chefs/sponsor/7/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/8/website](https://opencollective.com/sous-chefs/sponsor/8/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/9/website](https://opencollective.com/sous-chefs/sponsor/9/avatar.svg?avatarHeight=100)
